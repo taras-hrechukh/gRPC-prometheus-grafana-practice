@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service VehicleService {
+  rpc SendVehicleData (stream VehicleData) returns (Response);
+}
+
+message VehicleData {
+  double speed = 1;
+  double rpm = 2;
+  double longitude = 3;
+  double latitude = 4;
+  double state_of_charge = 5;
+}
+
+message Response {
+  string message = 1;
+}
